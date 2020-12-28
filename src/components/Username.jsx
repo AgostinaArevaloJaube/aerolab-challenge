@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import coin from '../assets/icons/coin.svg';
 import theme from '../styles/theme';
+import Coins from '../styles/Coins'
 // import api from '../scripts/api'
 
 const Username = () => {
@@ -30,23 +31,6 @@ const UsernameContainer = styled.div`
 		width: fit-content;
 	})
 `;
-const Coins = styled.div`
-	margin: 0.5rem;
-	padding: 0.3rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 1.2rem;
-	background-color: ${theme.colors.buttonBackground};
 
-	p {
-		margin: 0.1rem;
-	}
-
-	img {
-		width: 1.6rem;
-		margin: 0.1rem;
-	}
-`;
 
 export default Username;
