@@ -1,12 +1,12 @@
 import React from 'react';
 //import styled from 'styled-components';
 
-const GetPoints = () => {
+const GetCoins = () => {
 
 
 	return (
-		<h1>Hola soy GetPoints</h1>
+		<h1>Hola soy GetCoins</h1>
 	)
 }
 
-export default GetPoints;
+export default GetCoins;
