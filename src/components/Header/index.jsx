@@ -17,7 +17,9 @@ const Header = () => {
 
 	return (
 		<HeaderWrapper>
-			<img src={logo} alt="Logo de Aerolab" />
+			<Link to="/">
+				<img src={logo} alt="Logo de Aerolab" />
+			</Link>
 			<FlexContainer>
 				<Username />
 				<Hamburger onClick={() => setIsOpen(!isOpen)}>
