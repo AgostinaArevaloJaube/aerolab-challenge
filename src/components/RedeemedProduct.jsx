@@ -10,7 +10,8 @@ const RedeemedProduct = (props) => {
 			<InfoContainer>
 				<b>{props.name}</b>
 				<p>
-					<b>Cost:</b>{props.cost}
+					<b>Cost: </b>
+					{props.cost} coins
 				</p>
 			</InfoContainer>
 		</ProductContainer>
