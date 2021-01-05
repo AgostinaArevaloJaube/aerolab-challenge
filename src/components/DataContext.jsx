@@ -6,12 +6,13 @@ export const DataContext = createContext();
 export const DataProvider = (props) => {
 	const [userData, setUserData] = useState({
 		name: '',
-		coins: 0,
+		points: 0,
 		redeemHistory: []
 	});
 
 	useEffect(() => {
 		fetchUser(userData, setUserData);
+		console.log(userData);
 		//eslint-disable-next-line
 	}, []);
 

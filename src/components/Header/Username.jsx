@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { DataContext } from '../DataContext';
 
@@ -13,7 +13,7 @@ const Username = () => {
 		<UsernameContainer>
 			<p>{userData.name}</p>
 			<Coins>
-				<p>{userData.coins}</p>
+				<p>{userData.points}</p>
 				<img src={coin} alt="Ilustracion de una moneda" />
 			</Coins>
 		</UsernameContainer>
