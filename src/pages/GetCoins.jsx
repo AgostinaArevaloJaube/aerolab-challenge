@@ -8,13 +8,10 @@ import { DataContext } from '../components/DataContext';
 import { postPoints } from '../services/api';
 
 const GetCoins = () => {
-	const [userData] = useContext(DataContext);
+	const [userData, setUserData] = useContext(DataContext);
 
 	const handleGetCoins = (amount) => {
-		postPoints(amount);
-
-		const newCoins = { ...userData };
-		newCoins.coins = {};
+		postPoints(amount, userData, setUserData);
 	};
 
 	return (

@@ -21,36 +21,36 @@ export const fetchUser = async (userData, setUserData) => {
 			'https://coding-challenge-api.aerolab.co/user/me',
 			requestOptions
 		);
-		const user = await result.json();
-
-		const userState = { ...userData };
-		userState.name = user.name;
-		userState.coins = user.points;
-		userState.redeemHistory = user.redeemHistory;
-		setUserData(userState);
-		console.log(user);
+		const newUser = await result.json();
+		setUserData(newUser);
 	} catch (error) {
 		console.log('error', error);
 	}
 };
 
-export const postPoints = async (amount) => {
-	var raw = JSON.stringify({ amount: amount });
+export const postPoints = async (amount, userData, setUserData) => {
+	let raw = JSON.stringify({ amount: amount });
 
-	var requestOptions = {
+	let requestOptions = {
 		method: 'POST',
 		headers: myHeaders,
 		body: raw,
 		redirect: 'follow'
 	};
 
-	await fetch(
-		'https://coding-challenge-api.aerolab.co/user/points',
-		requestOptions
-	)
-		.then((response) => response.text())
-		.then((result) => console.log(result))
-		.catch((error) => console.log('error', error));
+	try {
+		const result = await fetch(
+			'https://coding-challenge-api.aerolab.co/user/points',
+			requestOptions
+		);
+		const newPointsData = await result.json();
+
+		const newPointsState = { ...userData };
+		newPointsState.points = newPointsData['New Points'];
+		setUserData(newPointsState);
+	} catch (error) {
+		console.log('error', error);
+	}
 };
 
 export const getReedem = async (productId) => {
