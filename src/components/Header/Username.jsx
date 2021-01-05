@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import styled from 'styled-components';
+import { DataContext } from '../DataContext';
 
-import coin from '../assets/icons/coin.svg';
-import theme from '../styles/theme';
-import Coins from '../styles/Coins'
-// import api from '../scripts/api'
+import coin from '../../assets/icons/coin.svg';
+import theme from '../../styles/theme';
+import Coins from '../../styles/Coins';
 
 const Username = () => {
+	const [userData] = useContext(DataContext);
+
 	return (
 		<UsernameContainer>
-			<p>Julia Collie</p>
+			<p>{userData.name}</p>
 			<Coins>
-				<p>6000</p>
-				<img src={coin} alt="" />
+				<p>{userData.coins}</p>
+				<img src={coin} alt="Ilustracion de una moneda" />
 			</Coins>
 		</UsernameContainer>
 	);
@@ -31,6 +33,5 @@ const UsernameContainer = styled.div`
 		width: fit-content;
 	})
 `;
-
 
 export default Username;

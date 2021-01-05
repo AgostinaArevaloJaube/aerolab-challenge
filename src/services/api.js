@@ -9,20 +9,29 @@ myHeaders.append(
 	'__cfduid=dd159e1f127ea9dc2f49dad7a94c1cde41608247239'
 );
 
-export const fetchUser = async () => {
+export const fetchUser = async (userData, setUserData) => {
 	let requestOptions = {
 		method: 'GET',
 		headers: myHeaders,
 		redirect: 'follow'
 	};
 
-	await fetch(
-		'https://coding-challenge-api.aerolab.co/user/me',
-		requestOptions
-	)
-		.then((response) => response.text())
-		.then((result) => console.log(result))
-		.catch((error) => console.log('error', error));
+	try {
+		const result = await fetch(
+			'https://coding-challenge-api.aerolab.co/user/me',
+			requestOptions
+		);
+		const user = await result.json();
+
+		const userState = { ...userData };
+		userState.name = user.name;
+		userState.coins = user.points;
+		userState.redeemHistory = user.redeemHistory;
+		setUserData(userState);
+		console.log(user);
+	} catch (error) {
+		console.log('error', error);
+	}
 };
 
 export const postPoints = async (amount) => {
@@ -79,13 +88,12 @@ export const getProducts = async () => {
 		.catch((error) => console.log('error', error));
 };
 
-export const getHistory = async () => {
+export const getHistory = async (userData, setUserData) => {
 	let requestOptions = {
 		method: 'GET',
 		headers: myHeaders,
 		redirect: 'follow'
 	};
-
 	await fetch(
 		'https://coding-challenge-api.aerolab.co/user/history',
 		requestOptions

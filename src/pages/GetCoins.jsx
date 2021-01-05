@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import theme from '../styles/theme';
 import Coins from '../styles/Coins';
 import coin from '../assets/icons/coin.svg';
-import {PagesContainer, Title} from '../styles/PagesContainer'
+import { PagesContainer, Title } from '../styles/PagesContainer';
+import { DataContext } from '../components/DataContext';
+import { postPoints } from '../services/api';
 
 const GetCoins = () => {
+	const [userData] = useContext(DataContext);
+
+	const handleGetCoins = (amount) => {
+		postPoints(amount);
+
+		const newCoins = { ...userData };
+		newCoins.coins = {};
+	};
+
 	return (
 		<PagesContainer>
 			<Title>Get more coins</Title>
 			<p>Choose the coins you want to add</p>
 
 			<CoinsContainer>
-				<Coin>
+				<Coin
+					onClick={() => {
+						handleGetCoins(1000);
+					}}
+				>
 					<p>1000</p>
 					<img src={coin} alt="Ilustration of coin" />
 				</Coin>
-				<Coin>
+				<Coin
+					onClick={() => {
+						handleGetCoins(5000);
+					}}
+				>
 					<p>5000</p>
 					<img src={coin} alt="Ilustration of coin" />
 				</Coin>
-				<Coin>
+				<Coin
+					onClick={() => {
+						handleGetCoins(7500);
+					}}
+				>
 					<p>7500</p>
 					<img src={coin} alt="Ilustration of coin" />
 				</Coin>

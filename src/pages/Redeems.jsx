@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import styled from 'styled-components';
 import { PagesContainer, Title } from '../styles/PagesContainer';
 import RedeemedProduct from '../components/RedeemedProduct';
 import theme from '../styles/theme';
+// import { getHistory } from '../scripts/api';
+import { DataContext } from '../components/DataContext';
 
 const Redeems = () => {
+	const [userData] = useContext(DataContext);
+
+	const redeemHistory = userData.redeemHistory;
+	console.log(redeemHistory);
+
 	return (
 		<PagesContainer>
 			<Title>Redeemed products</Title>
 			<p>History of your redeems</p>
 
 			<ProductsGrid>
-				<RedeemedProduct />
-				<RedeemedProduct />
-				<RedeemedProduct />
-				<RedeemedProduct />
-				<RedeemedProduct />
+				{redeemHistory.map((product) => (
+					<RedeemedProduct {...product} key={product.createDate} />
+				))}
 			</ProductsGrid>
 		</PagesContainer>
 	);

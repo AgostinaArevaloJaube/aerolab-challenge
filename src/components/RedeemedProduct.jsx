@@ -2,17 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../styles/theme';
 
-import productImage from '../assets/AcerAspire-x1.png';
-
-const RedeemedProduct = () => {
+const RedeemedProduct = (props) => {
 	return (
 		<ProductContainer>
-			<Image src={productImage} alt="" />
+			<Image src={props.img.url} alt="" />
 
 			<InfoContainer>
-				<b>Acer Aspire-x1</b>
+				<b>{props.name}</b>
 				<p>
-					<b>Cost:</b> 200
+					<b>Cost:</b>{props.cost}
 				</p>
 			</InfoContainer>
 		</ProductContainer>
