@@ -17,7 +17,7 @@ const Header = () => {
 
 	return (
 		<HeaderWrapper>
-			<Link to="/">
+			<Link to="/rewards-store">
 				<img src={logo} alt="Logo de Aerolab" />
 			</Link>
 			<FlexContainer>
@@ -38,7 +38,10 @@ const Header = () => {
 					)}
 				</Hamburger>
 				<MenuList isOpen={isOpen}>
-					<MenuLinks onClick={handleClosingNavbar} to="/">
+					<MenuLinks
+						onClick={handleClosingNavbar}
+						to="/rewards-store"
+					>
 						<li>Shop</li>
 					</MenuLinks>
 					<MenuLinks onClick={handleClosingNavbar} to="/redeems">
@@ -64,6 +67,7 @@ const HeaderWrapper = styled.header`
 const FlexContainer = styled.div`
 	display: flex;
 	align-items: center;
+	z-index: 100;
 `;
 
 const Hamburger = styled.div`

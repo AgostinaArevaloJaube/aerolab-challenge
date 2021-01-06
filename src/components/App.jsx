@@ -12,7 +12,7 @@ function App() {
 			<DataProvider>
 				<Header />
 				<Switch>
-					<Route path="/" component={Shop} exact />
+					<Route path="/rewards-store" component={Shop} exact />
 					<Route path="/redeems" component={Redeems} />
 					<Route path="/getcoins" component={GetCoins} />
 				</Switch>
