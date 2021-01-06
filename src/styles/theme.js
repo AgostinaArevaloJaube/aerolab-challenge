@@ -7,7 +7,7 @@ const theme = {
 	},
 	fonts:{
 		primaryColor: '#616161',
-		secondaryColor: 'A3A3A3',
+		secondaryColor: '#A3A3A3',
 	},
 	mediaQueries: {
 		above480: '(min-width: 480px)',
