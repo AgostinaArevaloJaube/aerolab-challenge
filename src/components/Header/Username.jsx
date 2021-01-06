@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { DataContext } from '../DataContext';
+import { UserContext } from '../Context/UserContext';
 
 import coin from '../../assets/icons/coin.svg';
 import theme from '../../styles/theme';
 import Coins from '../../styles/Coins';
 
 const Username = () => {
-	const [userData] = useContext(DataContext);
+	const [userData] = useContext(UserContext);
 
 	return (
 		<UsernameContainer>

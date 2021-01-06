@@ -4,11 +4,11 @@ import theme from '../styles/theme';
 import Coins from '../styles/Coins';
 import coin from '../assets/icons/coin.svg';
 import { PagesContainer, Title } from '../styles/PagesContainer';
-import { DataContext } from '../components/DataContext';
+import { UserContext } from '../components/Context/UserContext';
 import { postPoints } from '../services/api';
 
 const GetCoins = () => {
-	const [userData, setUserData] = useContext(DataContext);
+	const [userData, setUserData] = useContext(UserContext);
 
 	const handleGetCoins = (amount) => {
 		postPoints(amount, userData, setUserData);

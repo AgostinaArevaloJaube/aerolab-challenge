@@ -1,13 +1,13 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { PagesContainer, Title } from '../styles/PagesContainer';
 import RedeemedProduct from '../components/RedeemedProduct';
 import theme from '../styles/theme';
 // import { getHistory } from '../scripts/api';
-import { DataContext } from '../components/DataContext';
+import { UserContext } from '../components/Context/UserContext';
 
 const Redeems = () => {
-	const [userData] = useContext(DataContext);
+	const [userData] = useContext(UserContext);
 
 	const redeemHistory = userData.redeemHistory;
 	console.log(redeemHistory);

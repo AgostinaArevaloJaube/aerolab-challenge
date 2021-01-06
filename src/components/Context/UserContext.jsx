@@ -1,9 +1,9 @@
 import React, { useState, createContext, useEffect } from 'react';
-import { fetchUser } from '../services/api';
+import { fetchUser, getProducts } from '../../services/api';
 
-export const DataContext = createContext();
+export const UserContext = createContext();
 
-export const DataProvider = (props) => {
+export const UserProvider = (props) => {
 	const [userData, setUserData] = useState({
 		name: '',
 		points: 0,
@@ -13,12 +13,13 @@ export const DataProvider = (props) => {
 	useEffect(() => {
 		fetchUser(userData, setUserData);
 		console.log(userData);
+		getProducts();
 		//eslint-disable-next-line
 	}, []);
 
 	return (
-		<DataContext.Provider value={[userData, setUserData]}>
+		<UserContext.Provider value={[userData, setUserData]}>
 			{props.children}
-		</DataContext.Provider>
+		</UserContext.Provider>
 	);
 };
