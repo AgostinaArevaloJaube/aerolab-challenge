@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
-import { fetchUser, getProducts } from '../../services/api';
+import { fetchUser } from '../../services/api';
 
 export const UserContext = createContext();
 
@@ -11,9 +11,7 @@ export const UserProvider = (props) => {
 	});
 
 	useEffect(() => {
-		fetchUser(userData, setUserData);
-		console.log(userData);
-		getProducts();
+		fetchUser(setUserData);
 		//eslint-disable-next-line
 	}, []);
 
