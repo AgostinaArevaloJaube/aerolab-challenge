@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from 'react';
-//import { ProductContext } from './Context/ProductContex';
-import Product from '../components/Product';
-import { getProducts } from '../services/api';
+import React, { useContext } from 'react';
+import { ProductContext } from './Context/ProductContext';
+import Product from './Product/Product';
+import theme from '../../src/styles/theme';
 
 import styled from 'styled-components';
 
 const ProductList = () => {
-	const [productData, setProductData] = useState([]);
-
-	useEffect(() => {
-		getProducts(setProductData);
-	}, []);
+	const [productData] = useContext(ProductContext);
 
 	return (
-		<ProductListContianer>
+		<ProductListContainer>
 			{productData.map((product) => (
 				<Product {...product} key={product._id} />
 			))}
-		</ProductListContianer>
+		</ProductListContainer>
 	);
 };
 
 export default ProductList;
 
-const ProductListContianer = styled.div`
-	width: 100%;
+const ProductListContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-content: center;
+	align-items: center;
+
+	@media ${theme.mediaQueries.above600}{
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		max-width: 100%;
+	})
 `;
