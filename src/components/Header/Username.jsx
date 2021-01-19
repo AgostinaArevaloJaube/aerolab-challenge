@@ -14,7 +14,7 @@ const Username = () => {
 			<p>{userData.name}</p>
 			<Coins>
 				<p>{userData.points}</p>
-				<img src={coin} alt="Ilustracion de una moneda" />
+				<Coin src={coin} alt="Ilustracion de una moneda" />
 			</Coins>
 		</UsernameContainer>
 	);
@@ -34,4 +34,8 @@ const UsernameContainer = styled.div`
 	})
 `;
 
+const Coin = styled.img`
+	padding: 0.18rem;
+	width: 1.5rem;
+`;
 export default Username;
