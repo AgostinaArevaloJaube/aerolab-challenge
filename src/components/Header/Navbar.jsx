@@ -33,10 +33,10 @@ function Navbar() {
 				<MenuLinks onClick={handleClosingNavbar} to="/" exact>
 					<li>Shop</li>
 				</MenuLinks>
-				<MenuLinks onClick={handleClosingNavbar} to="/redeems" exact>
+				<MenuLinks onClick={handleClosingNavbar} to="/redeems">
 					<li>Redeems</li>
 				</MenuLinks>
-				<MenuLinks onClick={handleClosingNavbar} to="/getcoins" exact>
+				<MenuLinks onClick={handleClosingNavbar} to="/getcoins">
 					<li>Get Coins</li>
 				</MenuLinks>
 			</MenuList>
