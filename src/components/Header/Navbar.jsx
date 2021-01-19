@@ -30,7 +30,7 @@ function Navbar() {
 				)}
 			</Hamburger>
 			<MenuList isOpen={isOpen}>
-				<MenuLinks onClick={handleClosingNavbar} to="/rewards-store">
+				<MenuLinks onClick={handleClosingNavbar} to="/">
 					<li>Shop</li>
 				</MenuLinks>
 				<MenuLinks onClick={handleClosingNavbar} to="/redeems">
