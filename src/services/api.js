@@ -1,7 +1,7 @@
 let myHeaders = new Headers();
 myHeaders.append(
 	'Authorization',
-	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmRhOTk5MjI2ZjdkMjAwMjA0MTE0Y2UiLCJpYXQiOjE2MDgxNjE2ODN9.whOAW-6bzO5aZsKdniLQxLlrIx4ObDlrT-ux0WmWrk0'
+	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDAwOGYxMTliNjk4OTAwMTlmNGI3NTIiLCJpYXQiOjE2MTA2NDkzNjJ9.G8S2a5bCN1A4HZhyDrfI4ndXLiPVckJtv9LrP6yCouw'
 );
 myHeaders.append('Content-Type', 'application/json');
 myHeaders.append(
@@ -60,7 +60,6 @@ export const getProducts = async (setProductData) => {
 		const result = await fetch(`${API_URL}/products`, requestOptions);
 		const products = await result.json();
 		setProductData(products);
-		console.log(products);
 	} catch (error) {
 		console.log('error', error);
 	}
