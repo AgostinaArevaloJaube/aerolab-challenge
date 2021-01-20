@@ -21,6 +21,7 @@ const Image = styled.img`
 `;
 
 const Title = styled.h1`
+	width: 80%;
 	color: ${theme.colors.background};
 	position: relative;
 	font-size: 1.3em;
