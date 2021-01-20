@@ -5,7 +5,7 @@ import theme from '../styles/theme';
 const RedeemedProduct = (props) => {
 	return (
 		<ProductContainer>
-			<Image src={props.img.url} alt="" />
+			<Image src={props.img.url} alt="Imagen ilustrativa del producto" />
 
 			<InfoContainer>
 				<b>{props.name}</b>

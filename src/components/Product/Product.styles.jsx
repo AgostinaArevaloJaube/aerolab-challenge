@@ -12,6 +12,7 @@ export const ProductContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	position: relative;
+	z-index: 5;
 
 	@media ${theme.mediaQueries.above600} {
 		width: 40%;
