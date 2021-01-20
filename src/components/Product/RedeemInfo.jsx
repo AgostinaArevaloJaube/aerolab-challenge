@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../../../styles/theme';
-import bagBlue from '../../../assets/icons/buy-blue.svg';
-import bagWhite from '../../../assets/icons/buy-white.svg';
-import coin from '../../../assets/icons/coin.svg';
+import theme from '../../styles/theme';
+import bagBlue from '../../assets/icons/buy-blue.svg';
+import bagWhite from '../../assets/icons/buy-white.svg';
+import coin from '../../assets/icons/coin.svg';
 
-const RedeemInfo = (props) => {
-	const { userPoints, productCost, hover } = props;
-
+const RedeemInfo = (userPoints, productCost, hover) => {
 	const bag = hover ? bagWhite : bagBlue;
 
 	const setContent = (userPoints, productCost) => {

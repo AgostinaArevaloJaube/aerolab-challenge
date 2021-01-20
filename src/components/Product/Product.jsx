@@ -8,21 +8,14 @@ import {
 	ProductInfo
 } from './Product.styles';
 import { UserContext } from '../Context/UserContext';
-import RedeemInfo from '../Product/RedeemInfo/RedeemInfo';
+import RedeemInfo from './RedeemInfo';
 import ProductHover from './ProductHover';
-import { getReedem } from '../../services/api';
 
 const Product = (props) => {
 	const { name, category, img, cost, _id } = props;
 	const [userData, setUserData] = useContext(UserContext);
 	const userPoints = userData.points;
 	const [hover, setHover] = useState(false);
-
-	function redeemProduct(id, cost, userPoints) {
-		getReedem(id);
-		const userNewPoints = userPoints - cost;
-		setUserData({ ...userData, points: userNewPoints });
-	}
 
 	return (
 		<ProductContainer
@@ -31,11 +24,11 @@ const Product = (props) => {
 		>
 			{hover && (
 				<ProductHover
-					productCost={cost}
+					userData={userData}
+					setUserData={setUserData}
 					userPoints={userPoints}
+					productCost={cost}
 					productId={_id}
-					hover={hover}
-					redeemProduct={redeemProduct}
 				/>
 			)}
 			<RedeemInfo
@@ -49,9 +42,6 @@ const Product = (props) => {
 				<ProductCategory>{category}</ProductCategory>
 				<ProductName>{name}</ProductName>
 			</ProductInfo>
-			{hover
-				? console.log("It's happening")
-				: console.log("It's not happening")}
 		</ProductContainer>
 	);
 };

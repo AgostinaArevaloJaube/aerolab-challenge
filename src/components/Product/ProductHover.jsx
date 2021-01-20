@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import theme from '../../styles/theme';
 import coin from '../../assets/icons/coin.svg';
+import { getReedem } from '../../services/api';
+import RedeemModal from './RedeemModal';
 
 const ProductHover = (props) => {
-	const { userPoints, productCost, productId, redeemProduct } = props;
+	const { userData, setUserData, userPoints, productCost, productId } = props;
+	const [successRedeem, setSuccessRedeem] = useState(false);
+
+	function redeemProduct(id, cost, userPoints) {
+		const redeemStatus = getReedem(id);
+		const userNewPoints = userPoints - cost;
+		setUserData({ ...userData, points: userNewPoints });
+		setSuccessRedeem(redeemStatus);
+	}
+
 	return (
 		<HoverContainer>
 			<ProductValue>
@@ -13,13 +23,13 @@ const ProductHover = (props) => {
 			</ProductValue>
 
 			{userPoints >= productCost && (
-				<Button
-					onClick={() =>
-						redeemProduct(productId, productCost, userPoints)
-					}
-				>
-					Redeem now
-				</Button>
+				<RedeemModal
+					redeemProduct={redeemProduct}
+					userPoints={userPoints}
+					productCost={productCost}
+					productId={productId}
+					successRedeem={successRedeem}
+				/>
 			)}
 		</HoverContainer>
 	);
@@ -58,22 +68,6 @@ const Text = styled.p`
 const Coin = styled.img`
 	padding: 0.11rem;
 	width: 1.8rem;
-`;
-const Button = styled.button`
-	width: 85%;
-	padding: 0.5rem;
-	border: none;
-	border-radius: 20px;
-	background-color: #f2f1f1;
-	color: ${theme.fonts.primaryColor};
-	font-size: 0.9em;
-	outline: none;
-	cursor: pointer;
-
-	&:hover {
-		background-color: #c7c5c5;
-		color: #fff;
-	}
 `;
 
 export default ProductHover;
