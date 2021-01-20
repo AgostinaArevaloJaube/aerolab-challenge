@@ -5,21 +5,21 @@ import bagBlue from '../../assets/icons/buy-blue.svg';
 import bagWhite from '../../assets/icons/buy-white.svg';
 import coin from '../../assets/icons/coin.svg';
 
-const RedeemInfo = (userPoints, productCost, hover) => {
-	const bag = hover ? bagWhite : bagBlue;
-
-	const setContent = (userPoints, productCost) => {
-		if (userPoints >= productCost) {
-			return <Bag src={bag} alt="icono de bolsa de compras" />;
-		} else {
+const RedeemInfo = (props) => {
+	const { productCost, userPoints, hover } = props;
+	function setContent(userPoints, productCost) {
+		if (productCost > userPoints) {
 			return (
 				<RedeemInfoContainer>
 					<RedeemText>You need {productCost - userPoints}</RedeemText>
 					<RedeemCoin src={coin} alt="icono de una moneda" />
 				</RedeemInfoContainer>
 			);
+		} else {
+			const bag = hover ? bagWhite : bagBlue;
+			return <Bag src={bag} alt="icono de bolsa de compras" />;
 		}
-	};
+	}
 
 	return <Container>{setContent(userPoints, productCost)}</Container>;
 };
