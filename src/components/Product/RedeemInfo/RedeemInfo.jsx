@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../../../styles/theme';
-import bag from '../../../assets/icons/buy-blue.svg';
+import bagBlue from '../../../assets/icons/buy-blue.svg';
+import bagWhite from '../../../assets/icons/buy-white.svg';
 import coin from '../../../assets/icons/coin.svg';
 
 const RedeemInfo = (props) => {
-	const { userPoints, productCost } = props;
+	const { userPoints, productCost, hover } = props;
+
+	const bag = hover ? bagWhite : bagBlue;
 
 	const setContent = (userPoints, productCost) => {
 		if (userPoints >= productCost) {
@@ -30,6 +33,7 @@ const Container = styled.div`
 	position: absolute;
 	top: 0.5rem;
 	right: 0.3rem;
+	z-index: 300;
 `;
 
 const RedeemInfoContainer = styled.div`
