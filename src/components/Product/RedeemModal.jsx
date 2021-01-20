@@ -88,8 +88,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Button = styled.button`
-	width: 20rem;
-	padding: 0.5rem;
+	padding: 0.5rem 2.2rem;
 	border: none;
 	border-radius: 20px;
 	background-color: #f2f1f1;
@@ -101,13 +100,6 @@ const Button = styled.button`
 	&:hover {
 		background-color: #c7c5c5;
 		color: #fff;
-	}
-
-	@media (min-width: 600px) {
-		width: 12rem;
-	}
-	@media (min-width: 768px) {
-		width: 10rem;
 	}
 `;
 
