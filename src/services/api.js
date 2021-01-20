@@ -75,10 +75,13 @@ export const getReedem = async (productId) => {
 		redirect: 'follow'
 	};
 
-	await fetch(`${API_URL}/redeem`, requestOptions)
-		.then((response) => response.json())
-		.then((result) => console.log(result))
-		.catch((error) => console.log('error', error));
+	try {
+		await fetch(`${API_URL}/redeem`, requestOptions);
+		return true;
+	} catch (error) {
+		console.log('error', error);
+		return false;
+	}
 };
 
 export const getHistory = async (userData, setUserData) => {
