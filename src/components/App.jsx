@@ -14,7 +14,7 @@ function App() {
 				<ProductProvider>
 					<Header />
 					<Switch>
-						<Route path="/" component={Shop} exact />
+						<Route exact path="/" component={Shop} />
 						<Route path="/redeems" component={Redeems} />
 						<Route path="/getcoins" component={GetCoins} />
 					</Switch>

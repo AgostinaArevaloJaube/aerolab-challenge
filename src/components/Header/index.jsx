@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 const Header = () => {
 	return (
 		<HeaderWrapper>
-			<Link to="/">
+			<Link exact to="/">
 				<img src={logo} alt="Logo de Aerolab" />
 			</Link>
 			<FlexContainer>
