@@ -6,8 +6,7 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 	const [userData, setUserData] = useState({
 		name: '',
-		points: 0,
-		redeemHistory: []
+		points: 0
 	});
 
 	useEffect(() => {

@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PagesContainer, Title } from '../styles/PagesContainer';
 import RedeemedProduct from '../components/RedeemedProduct';
 import theme from '../styles/theme';
-// import { getHistory } from '../scripts/api';
-import { UserContext } from '../components/Context/UserContext';
+import { getHistory } from '../services/api';
 
 const Redeems = () => {
-	const [userData] = useContext(UserContext);
+	const [redeemedData, setRedeemedData] = useState([]);
 
-	const redeemHistory = userData.redeemHistory;
-	console.log(redeemHistory);
+	useEffect(() => {
+		getHistory(setRedeemedData);
+	}, []);
 
 	return (
 		<PagesContainer>
@@ -18,7 +18,7 @@ const Redeems = () => {
 			<p>History of your redeems</p>
 
 			<ProductsGrid>
-				{redeemHistory.map((product) => (
+				{redeemedData.map((product) => (
 					<RedeemedProduct {...product} key={product.createDate} />
 				))}
 			</ProductsGrid>
@@ -30,6 +30,7 @@ const ProductsGrid = styled.section`
 	margin: 2rem auto;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 
 	@media ${theme.mediaQueries.above768} {
 		margin: 0 auto;

@@ -1,7 +1,7 @@
 let myHeaders = new Headers();
 myHeaders.append(
 	'Authorization',
-	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA3OTg2YzdlNzE4NzAwMjBlMzhlZGYiLCJpYXQiOjE2MTExMTA1MDh9.EUfklESmYmodtRTEvu7xMhOUAlph2DA3cfnYCorTiCM'
+	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA4ZTgxNDdlNzE4NzAwMjBlMzhlZTEiLCJpYXQiOjE2MTExOTY0MzZ9.90Pmgg6YLTvRsC8I6lkpkVaxcPfJND7uV8dsKMY19_U'
 );
 myHeaders.append('Content-Type', 'application/json');
 myHeaders.append(
@@ -84,14 +84,18 @@ export const getReedem = async (productId) => {
 	}
 };
 
-export const getHistory = async (userData, setUserData) => {
+export const getHistory = async (setRedeemData) => {
 	let requestOptions = {
 		method: 'GET',
 		headers: myHeaders,
 		redirect: 'follow'
 	};
-	await fetch(`${API_URL}/user/history`, requestOptions)
-		.then((response) => response.json())
-		.then((result) => console.log(result))
-		.catch((error) => console.log('error', error));
+
+	try {
+		const result = await fetch(`${API_URL}/user/history`, requestOptions);
+		const products = await result.json();
+		setRedeemData(products);
+	} catch (error) {
+		console.log('error', error);
+	}
 };
