@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const handleClosingNavbar = () => {
+	function handleClosingNavbar() {
 		return setIsOpen(false);
-	};
+	}
 
 	return (
 		<nav>

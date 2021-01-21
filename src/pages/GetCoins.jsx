@@ -10,9 +10,9 @@ import { postPoints } from '../services/api';
 const GetCoins = () => {
 	const [userData, setUserData] = useContext(UserContext);
 
-	const handleGetCoins = (amount) => {
+	function handleGetCoins(amount) {
 		postPoints(amount, userData, setUserData);
-	};
+	}
 
 	return (
 		<PagesContainer>
