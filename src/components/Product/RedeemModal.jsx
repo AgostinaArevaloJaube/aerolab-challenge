@@ -57,7 +57,7 @@ const RedeemModal = (props) => {
 						</Title>
 						<p id="transition-modal-description">
 							{successRedeem
-								? "You've redeem the product successfully"
+								? "You've redeemed the product successfully"
 								: 'Please try again in a few minutes.'}
 						</p>
 					</div>
