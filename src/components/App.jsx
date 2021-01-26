@@ -6,18 +6,21 @@ import GetCoins from '../pages/GetCoins';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { UserProvider } from '../components/Context/UserContext';
 import { ProductProvider } from '../components/Context/ProductContext';
+import { FilterProvider } from './Context/FilterContext';
 
 function App() {
 	return (
 		<Router>
 			<UserProvider>
 				<ProductProvider>
-					<Header />
-					<Switch>
-						<Route exact path="/" component={Shop} />
-						<Route path="/redeems" component={Redeems} />
-						<Route path="/getcoins" component={GetCoins} />
-					</Switch>
+					<FilterProvider>
+						<Header />
+						<Switch>
+							<Route exact path="/" component={Shop} />
+							<Route path="/redeems" component={Redeems} />
+							<Route path="/getcoins" component={GetCoins} />
+						</Switch>
+					</FilterProvider>
 				</ProductProvider>
 			</UserProvider>
 		</Router>
