@@ -16,7 +16,6 @@ const FiltersByPrice = () => {
 		let { name, value } = event.target;
 		const newData = { ...filter, [name]: value };
 		setFilter(newData);
-		console.log(name, value);
 	}
 
 	function handleClose() {
@@ -34,9 +33,10 @@ const FiltersByPrice = () => {
 					style={{ color: '#0AD4FA' }}
 					id="demo-controlled-open-select-label"
 				>
-					Filter by Price
+					Order by Price
 				</InputLabel>
 				<Select
+					style={{ color: '#616161' }}
 					labelId="demo-controlled-open-select-label"
 					id="demo-controlled-open-select"
 					open={open}

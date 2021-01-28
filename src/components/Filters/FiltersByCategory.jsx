@@ -21,7 +21,6 @@ const FiltersByCategory = () => {
 		let { name, value } = event.target;
 		const newData = { ...filter, [name]: value.toLowerCase() };
 		setFilter(newData);
-		console.log(name, value);
 	}
 
 	function handleClose() {
@@ -42,6 +41,7 @@ const FiltersByCategory = () => {
 					Filter by Category
 				</InputLabel>
 				<Select
+					style={{ color: '#616161' }}
 					labelId="demo-controlled-open-select-label"
 					id="demo-controlled-open-select"
 					open={open}
