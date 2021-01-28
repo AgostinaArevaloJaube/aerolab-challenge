@@ -17,6 +17,7 @@
 -   [Google Fonts](https://fonts.google.com/)
 -   [FontAwsome](https://fontawesome.com/)
 -   [API de Aerolab](https://aerolabchallenge.docs.apiary.io/)
+-   [Postman](https://www.postman.com/)
 
 ## Features solicitadas
 
