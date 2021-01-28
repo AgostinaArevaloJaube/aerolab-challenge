@@ -12,13 +12,15 @@ const Redeems = () => {
 		getHistory(setRedeemedData);
 	}, []);
 
+	const redeemedReversed = redeemedData.reverse();
+
 	return (
 		<PagesContainer>
 			<Title>Redeemed products</Title>
 			<p>History of your redeems</p>
 
 			<ProductsGrid>
-				{redeemedData.map((product) => (
+				{redeemedReversed.map((product) => (
 					<RedeemedProduct {...product} key={product.createDate} />
 				))}
 			</ProductsGrid>
