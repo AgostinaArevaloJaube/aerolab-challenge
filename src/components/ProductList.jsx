@@ -65,10 +65,10 @@ const ProductList = () => {
 		PRODUCTS_PER_PAGE
 	);
 
-	const handlePagination = (event, pageSelected) => {
+	function handlePagination(event, pageSelected) {
 		setCurrentPage(pageSelected);
 		productsPaginated.jumpToPage(pageSelected);
-	};
+	}
 
 	return (
 		<main>
