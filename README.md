@@ -13,6 +13,7 @@
 -   [React](https://reactjs.org/)
 -   [React hooks](https://reactjs.org/docs/hooks-intro.html) (context, custom hook)
 -   [React Router](https://reactrouter.com/web/guides/quick-start)
+-   [styled-components](https://styled-components.com/)
 -   [Material UI](https://material-ui.com/)
 -   [Google Fonts](https://fonts.google.com/)
 -   [FontAwsome](https://fontawesome.com/)
