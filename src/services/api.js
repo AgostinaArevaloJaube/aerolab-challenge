@@ -1,7 +1,7 @@
 let myHeaders = new Headers();
 myHeaders.append(
 	'Authorization',
-	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDEyZDc2NjdlNzE4NzAwMjBlMzhlZWMiLCJpYXQiOjE2MTE4NDc1MjZ9.5CXfAvAcEdxQzz6rqBPmv9Hl8NUsBjndu4gmWcdt1f8'
+	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDE0Nzc3ZjdlNzE4NzAwMjBlMzhlZWQiLCJpYXQiOjE2MTE5NTQwNDd9.7uG00byfRvVgivuoalZTFXrgrz_b6n6mJicxd9A2Q3k'
 );
 myHeaders.append('Content-Type', 'application/json');
 myHeaders.append(
