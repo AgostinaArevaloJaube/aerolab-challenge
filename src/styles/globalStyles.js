@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 body {
 	max-width: 1200px;
 	margin: 0 auto;
+	background-color: #f5f5f5;
 }
 `;
 
