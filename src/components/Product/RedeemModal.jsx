@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import theme from '../../styles/theme';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import theme from "../../styles/theme";
+import styled from "styled-components";
 
 const RedeemModal = (props) => {
 	const {
@@ -52,13 +52,13 @@ const RedeemModal = (props) => {
 					<div className={classes.paper}>
 						<Title id="transition-modal-title">
 							{successRedeem
-								? 'Congratulations!'
-								: 'Ops... something went wrong!'}
+								? "Congratulations!"
+								: "Ops... something went wrong!"}
 						</Title>
 						<p id="transition-modal-description">
 							{successRedeem
 								? "You've redeemed the product successfully"
-								: 'Please try again in a few minutes.'}
+								: "Please try again in a few minutes."}
 						</p>
 					</div>
 				</Fade>
@@ -70,20 +70,20 @@ const RedeemModal = (props) => {
 export default RedeemModal;
 const useStyles = makeStyles((theme) => ({
 	modal: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center'
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center"
 	},
 	paper: {
-		backgroundColor: '#fffefe',
-		border: 'none',
+		backgroundColor: "#fffefe",
+		border: "none",
 		boxShadow: theme.shadows[5],
-		borderRadius: '10px',
+		borderRadius: "10px",
 		padding: theme.spacing(2, 4, 3),
-		color: '#0AD4FA',
+		color: "#0AD4FA",
 		fontWeight: 300,
-		textAlign: 'center',
-		outline: 'none'
+		textAlign: "center",
+		outline: "none"
 	}
 }));
 
