@@ -1,7 +1,6 @@
 import React from 'react';
-import ProductList from '../components/ProductList';
+import ProductList from '../components/Product/ProductList';
 import Hero from '../components/Hero';
-// import styled from 'styled-components';
 
 const Shop = () => {
 	return (
