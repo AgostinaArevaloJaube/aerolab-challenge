@@ -132,10 +132,10 @@ const FilterContainer = styled.div`
 const Line = styled.hr`
 	display: none;
 
-	@media (min-width: 350px) {
+	@media (min-width: 400px) {
 		display: block;
-		margin: 0.5rem;
-		width: 100%;
+		margin: 0.5rem auto;
+		width: 95%;
 		height: 1px;
 		background-color: #ebe3e3;
 		border: #ebe3e3;
