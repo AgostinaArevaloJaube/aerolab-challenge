@@ -8,6 +8,7 @@ export const ProductContainer = styled.div`
 	border: 0.5px solid #e4e1e1;
 	border-radius: 5px;
 	box-shadow: ${theme.colors.boxShadow};
+	background-color: #fff;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
