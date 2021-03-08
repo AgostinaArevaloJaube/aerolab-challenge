@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
 	box-sizing: border-box;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: '#616161'
+};
+body {
+	max-width: 1200px;
+	margin: 0 auto;
 }
 `;
 
