@@ -3,7 +3,7 @@
 
 ## Tienda de productos que le permite a usuarios/as canjear puntos por productos, mediante una API brindada por Aerolab.
 
-[Link a la demo](https://agostinaarevalojaube.github.io/rewards-store/#/)
+[Link a la demo](https://agostinaarevalojaube.github.io/aerolab-challenge/#/)
 
 ## Tecnologías y recursos utilizados
 
